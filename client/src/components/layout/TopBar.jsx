@@ -43,7 +43,6 @@ export default function TopBar({ onMenu }) {
           <Menu className="h-5 w-5" />
         </button>
         <div>
-          <p className="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">Workspace</p>
           <p className="font-display text-sm font-semibold text-slate-900 dark:text-white">Compliance Command</p>
         </div>
       </div>
