@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  @apply min-h-full;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Fallback before React sets theme class */
+body {
+  @apply min-h-screen bg-zinc-100 text-zinc-900 antialiased;
+}
+
+html.light body {
+  @apply bg-zinc-50 text-zinc-900;
+  background-image: linear-gradient(145deg, #fafafa 0%, #f0f0f3 35%, #e4e4e7 70%, #d4d4d8 100%);
+  background-attachment: fixed;
+}
+
+html.dark body {
+  @apply text-zinc-100;
+  background-color: #18181b;
+  background-image: linear-gradient(145deg, #0f0f11 0%, #18181b 25%, #27272a 55%, #3f3f46 85%, #52525b 100%);
+  background-attachment: fixed;
+}
+
+.glass {
+  @apply rounded-2xl border border-zinc-200/80 bg-white/75 backdrop-blur-xl;
+  @apply dark:border-zinc-600/30 dark:bg-zinc-800/45;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+html.dark .glass {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-inner {
+  @apply rounded-xl border border-zinc-200/60 bg-zinc-50/80;
+  @apply dark:border-zinc-600/25 dark:bg-zinc-900/60;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.btn-primary {
+  @apply rounded-xl bg-violet-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-violet-500;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.25);
+}
+
+.btn-secondary {
+  @apply rounded-xl border border-zinc-300/80 bg-white/60 px-4 py-2 text-sm font-semibold text-zinc-800 backdrop-blur transition hover:bg-white/80;
+  @apply dark:border-zinc-600/40 dark:bg-zinc-800/50 dark:text-zinc-100 dark:hover:bg-zinc-700/50;
+}
+
+.shadow-glow {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
+}
