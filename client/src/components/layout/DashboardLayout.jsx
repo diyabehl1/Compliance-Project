@@ -25,7 +25,7 @@ export default function DashboardLayout() {
         initial={false}
         animate={{ x: mobileNav ? 0 : "-100%" }}
         transition={{ type: "spring", stiffness: 280, damping: 30 }}
-        className="fixed inset-y-0 left-0 z-50 w-64 border-r border-zinc-200 bg-white/95 shadow-2xl backdrop-blur-xl dark:border-zinc-700 dark:bg-graphite-900/95 md:hidden"
+        className="fixed inset-y-0 left-0 z-50 w-64 border-r border-zinc-200 bg-white/95 shadow-2xl backdrop-blur-xl dark:border-blue-500/10 dark:bg-ink-950/98 md:hidden"
         style={{ pointerEvents: mobileNav ? "auto" : "none" }}
       >
         <div className="h-full overflow-y-auto pt-4">

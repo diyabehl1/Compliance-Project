@@ -32,11 +32,11 @@ export default function TopBar({ onMenu }) {
   };
 
   return (
-    <header className="flex items-center justify-between border-b border-zinc-200/80 bg-white/50 px-4 py-3 backdrop-blur-xl dark:border-zinc-700/40 dark:bg-graphite-900/45 md:px-6">
+    <header className="flex items-center justify-between border-b border-zinc-200/80 bg-white/50 px-4 py-3 backdrop-blur-xl dark:border-blue-500/10 dark:bg-ink-900/80 md:px-6">
       <div className="flex items-center gap-3">
         <button
           type="button"
-          className="rounded-xl border border-zinc-300 bg-white/70 p-2 md:hidden dark:border-zinc-600 dark:bg-graphite-800/60"
+          className="rounded-xl border border-zinc-300 bg-white/70 p-2 md:hidden dark:border-blue-500/15 dark:bg-ink-800/70"
           onClick={onMenu}
           aria-label="Open menu"
         >
@@ -50,7 +50,7 @@ export default function TopBar({ onMenu }) {
         <button
           type="button"
           onClick={toggleTheme}
-          className="rounded-xl border border-zinc-300 bg-white/70 p-2 dark:border-zinc-600 dark:bg-graphite-800/60"
+          className="rounded-xl border border-zinc-300 bg-white/70 p-2 dark:border-blue-500/15 dark:bg-ink-800/70"
           aria-label="Toggle theme"
         >
           {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
@@ -80,7 +80,7 @@ export default function TopBar({ onMenu }) {
             logout();
             nav("/login");
           }}
-          className="rounded-xl border border-zinc-300 bg-white/70 p-2 dark:border-zinc-600 dark:bg-graphite-800/60"
+          className="rounded-xl border border-zinc-300 bg-white/70 p-2 dark:border-blue-500/15 dark:bg-ink-800/70"
           title="Sign out"
         >
           <LogOut className="h-4 w-4" />

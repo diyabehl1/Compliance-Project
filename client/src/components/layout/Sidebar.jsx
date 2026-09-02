@@ -37,7 +37,7 @@ export default function Sidebar({ variant = "desktop", onNavigate }) {
   const vis = variant === "mobile" ? "flex" : "hidden md:flex";
   return (
     <aside
-      className={`${vis} w-64 shrink-0 flex-col border-r border-zinc-200/80 bg-white/60 py-6 backdrop-blur-xl dark:border-zinc-700/40 dark:bg-graphite-900/55`}
+      className={`${vis} w-64 shrink-0 flex-col border-r border-zinc-200/80 bg-white/60 py-6 backdrop-blur-xl dark:border-blue-500/10 dark:bg-ink-900/75`}
     >
       <div className="px-5 pb-6">
         <div className="font-display text-lg font-semibold tracking-tight text-graphite-900 dark:text-zinc-50">
@@ -56,7 +56,7 @@ export default function Sidebar({ variant = "desktop", onNavigate }) {
                 `flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition ${
                   isActive
                     ? "bg-accent-600/15 text-accent-700 dark:bg-accent-500/20 dark:text-accent-200"
-                    : "text-graphite-600 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-graphite-800/60"
+                    : "text-graphite-600 hover:bg-zinc-100 dark:text-slate-300 dark:hover:bg-ink-800/80"
                 }`
               }
             >
