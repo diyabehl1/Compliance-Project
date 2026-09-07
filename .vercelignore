@@ -1,6 +1,8 @@
-# Keep Express API off Vercel (deploy API on Render/Railway instead)
-server
+# Keep heavy/server files out of Vercel packaging where possible
+server/node_modules
+server/uploads
 **/node_modules
 **/.env
 **/.env.*
-server/uploads
+!client/.env.example
+!server/.env.example

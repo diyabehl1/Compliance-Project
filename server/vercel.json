@@ -1,0 +1,5 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "node -e \"console.error('ERROR: Do not deploy server/ to Vercel.'); console.error('Fix: Vercel Project Settings → Root Directory = client (recommended) or leave empty for repo root.'); process.exit(1)\""
+}

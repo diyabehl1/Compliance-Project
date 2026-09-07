@@ -51,14 +51,16 @@ MERN-stack AI compliance management platform: JWT auth with roles, AI policy gen
 
 ## Deploy on Vercel (frontend)
 
-This repo is a **MERN monorepo**. Vercel should host the **React client only**: not the Express `server/` folder (that causes “function crashed” errors).
+**Do not deploy `server/` to Vercel.** That causes `FUNCTION_INVOCATION_FAILED`.
 
-1. In Vercel → Project Settings → **Root Directory**: leave empty (repo root): `vercel.json` builds `client/`.
-   - Or set Root Directory to **`client`** and use the included `client/vercel.json`.
-2. **Framework preset:** Vite
-3. **Environment variable** (required for login/API):
-   - `VITE_API_URL` = `https://YOUR-API-HOST/api` (e.g. Render/Railway URL)
-4. Redeploy after setting env vars.
+### Required dashboard settings
+
+1. **Project Settings → General → Root Directory** = **`client`** (recommended), or leave empty for repo root.
+2. **Build & Development Settings**: turn **OFF** overrides for Install / Build / Output so repo config is used.
+3. Env var **`VITE_API_URL`** = `https://YOUR-API-HOST/api`
+4. **Redeploy**
+
+Repo root uses `scripts/vercel-build.mjs` to emit a **static-only** Vercel Build Output (no serverless functions). If Root Directory is still `server`, the build fails on purpose with a fix message.
 
 ## Deploy API (backend)
 
@@ -76,7 +78,7 @@ Optional: use included `render.yaml` with [Render](https://render.com).
 
 ## Troubleshooting
 
-- **Vercel “function crashed” / blank page**: Do not deploy `server/` to Vercel. Use Root Directory `client` or repo root with root `vercel.json`. Set `VITE_API_URL` to your hosted API.
+- **Vercel `FUNCTION_INVOCATION_FAILED`**: Root Directory must be `client` (or empty repo root), never `server`. Clear build overrides, redeploy. API stays on Render/Railway.
 - **`MONGODB_URI is required` / API exits**: Run `npm run doctor` inside `server/`. If it reports **0 bytes** for `.env`, your `server/.env` is empty on disk: paste your variables, **Save**, then run `npm run doctor` again.
 - **`--localstorage-file` Node warning**: Comes from a broken `NODE_OPTIONS` in your OS/user environment (not this repo). Clear or fix `NODE_OPTIONS` in Windows “Environment Variables” if the warning bothers you.
 
