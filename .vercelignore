@@ -1,0 +1,6 @@
+# Keep Express API off Vercel (deploy API on Render/Railway instead)
+server
+**/node_modules
+**/.env
+**/.env.*
+server/uploads

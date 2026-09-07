@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "name": "complinova-ai",
+  "scripts": {
+    "vercel-build": "npm install --prefix client && npm run build --prefix client",
+    "build": "npm run build --prefix client"
+  }
+}
